@@ -11,11 +11,11 @@ int smallestSubContiguousSubArray(vector<int>& array, int n, int sum) {
         while(windowSum >= sum) {
             minLength = min(minLength, windowEnd - winStart + 1);
             windowSum = windowSum - array[winStart];
-            winStart += 1;
+            winStart++;
         }
-        if (minLength = INT_MAX)
-            return 0;
     }   
+    if (minLength == INT_MAX)
+        return 0;
     return minLength;
 }
 
@@ -29,5 +29,6 @@ int main() {
     array.push_back(2);
     int n = 6;
     int result = smallestSubContiguousSubArray(array, n, 7);
+    cout<<result<<endl;
     return 0;
 }
