@@ -7,12 +7,15 @@ def samllestSubarrayWithGivenSum(array, s): # Time Complexity : O(n)
 
     for window_end in range(len(array)):
         window_sum = window_sum + array[window_end]
+
         while window_sum >= s:
             min_length = min(min_length, window_end - window_start + 1)
             window_sum = window_sum - array[window_start]
             window_start = window_start + 1
+
     if min_length == math.inf:
         return 0
+
     return min_length
 
 if __name__ == "__main__":
